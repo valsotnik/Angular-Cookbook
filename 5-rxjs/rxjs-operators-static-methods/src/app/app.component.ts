@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { interval, Subscription } from 'rxjs';
-import { map } from 'rxjs/operators';
+import { interval, partition, merge, Subscription } from 'rxjs';
+import { map, tap } from 'rxjs/operators';
 
 @Component({
   selector: 'app-root',
@@ -9,6 +9,8 @@ import { map } from 'rxjs/operators';
 })
 export class AppComponent {
   subscription: Subscription = null;
+  movies= []
+  cartoons= [];
   combinedStreamData = [{
     type: 'movie',
     title: 'john wick'
@@ -28,7 +30,6 @@ export class AppComponent {
     type: 'movie',
     title: 'interstellar'
   }];
-  outputStreamData = [];
   ngOnInit() {
   }
 
@@ -39,9 +40,23 @@ export class AppComponent {
         return this.combinedStreamData[index];
       })
     );
-    this.subscription = streamSource
+    const [moviesStream, cartoonsStream] = partition(
+      streamSource, item => item.type === 'movie'
+      );
+    this.subscription = merge(
+        moviesStream.pipe(
+          tap(movie => {
+            this.movies.push(movie.title);
+          })
+        ),
+        cartoonsStream.pipe(
+          tap(cartoon => {
+            this.cartoons.push(cartoon.title);
+          })
+        ),
+      )
       .subscribe(input => {
-        this.outputStreamData.push(input);
+        console.log(input);
       });
 
   }
@@ -52,3 +67,4 @@ export class AppComponent {
   }
 
 }
+

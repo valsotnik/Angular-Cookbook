@@ -1,3 +1,10 @@
+# How it works...
+
+RxJS has a bunch of static operators/methods that we can use for our particular use cases. In this recipe, we used the `partition` operator to create two different streams based on the predicate function provided as the second argument, which returns an array with two `Observables`.
+The first one will contain all values that satisfy the predicate, and the second one will contain all values that don't satisfy the predicate.
+Why did we split the streams? Glad you asked. Because we needed to show the appropriate outputs in different output containers.
+And what's GREAT is that we merged those streams later on so that we only had to subscribe to one stream, and we could then unsubscribe from that very stream as well.
+
 # RxjsOperatorsStaticMethods
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.0.6.
