@@ -1,3 +1,7 @@
+# How it works...
+
+Since we can't use two structural directives on a single element, we can always use another HTML element as a parent to use the other structural directive. However, that adds another element to the DOM and might cause problems for your element hierarchy, based on your implementation. `<ng-container>`, however, is a magical element from Angular's core that is not added to the DOM. Instead, it just wraps the logic/ condition that you apply to it, which makes it really easy for us to just add a `*ngIf` or `*ngSwitchCase` directive on top of your existing elements.
+
 # MultiStructuralDirectives
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.0.6.
