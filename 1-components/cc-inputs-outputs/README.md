@@ -1,3 +1,7 @@
+# How it works...
+
+In order to communicate between components using `@Input(s)` and `@Output(s)`, the data flow will always go from the child components to the parent component, which can provide the new (updated) value as input back to the required child components. So, `NotificationsManagerComponent` emits the `countChanged` event. `AppComponent` (being the parent component) listens for the event and updates the value of `notificationsCount`, which automatically updates the `count` property in `NotificationsButtonComponent` because `notificationsCount` is being passed as the `@Input()` count to `NotificationsButtonComponent`.
+
 # CcInputsOutputs
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.0.6.

@@ -1,3 +1,10 @@
+# How it works...
+
+Getters and setters are components of a built-in feature of JavaScript. Many developers have used them in their projects while using vanilla JavaScript, or even TypeScript.
+Fortunately, Angular's `@Input()` can also use getters and setters since they're basically a property of the provided class.
+For this recipe, we use a getter and, more specifically, a setter for our input so whenever the input changes, we use the setter method to do additional tasks. Moreover, we use the setter of the same input in our HTML so we directly show the value in the view when updated.
+It is always a good idea to use a private variable/property with getters and setters to have a separation of concerns on what the component receives as input and what it stores in itself separately.
+
 # CcSetters
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.0.6.

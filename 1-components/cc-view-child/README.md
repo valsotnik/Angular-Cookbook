@@ -1,3 +1,11 @@
+# How it works...
+
+`ViewChild()` is basically a decorator that the `@angular/core` package provides out of the box. It configures a view query for the Angular change detector.
+The change detector tries to find the first element matching the query and assigns it to the property associated with the `ViewChild()` decorator.
+In our recipe, we create a view child by providing `GalleryComponent` as the query parameter, that is, `ViewChild(GalleryComponent)`. This allows the Angular change detector to find the `<app-gallery>` element inside the `app.component.html` template, and then it assigns it to the gallery property within the `AppComponent` class.
+It is important to define the gallery property's type as `GalleryComponent` so we can easily use that in the component later with all the TypeScript magic.
+Important note: The view query is executed after the `ngOnInit` life cycle hook and before the `ngAfterViewInit` hook.
+
 # CcViewChild
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.0.6.

@@ -1,3 +1,10 @@
+# How it works...
+
+A template reference variable is often a reference to a DOM element within a template.
+It can also refer to a directive (which contains a component), an element, `TemplateRef`, or a web component (source: https://angular.io/guide/template- reference-variables).
+In essence, we can refer to our `<app-gallery>` component, which behind the scenes is a directive in Angular. Once we have the variable in our template, we pass the reference to the functions in our component as function arguments. Then, we can access the properties and the methods of `GalleryComponent` from there.
+You can see that we are able to add and remove items from the pictures array that resides in `GalleryComponent` directly from `AppComponent`, which is the parent component in this entire flow.
+
 # CcTemplateVars
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.0.6.

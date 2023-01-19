@@ -1,3 +1,9 @@
+# How it works...
+
+`ComponentFactoryResolver` is an Angular service that allows you to resolve components dynamically at runtime. In our recipe, we use the `resolveComponentFactory` method, which accepts a `Component` and returns a `ComponentFactory`. We can always use the `create` method of `ComponentFactory` to create instances of the component.
+But in this recipe, we're using `ViewContainerRef's` `createComponent` method, which accepts `ComponentFactory` as an input. It then uses `ComponentFactory` behind the scenes to generate the component and then to add it to the attached `ViewContainerRef`.
+Every time you create a component and attach it to `ViewContainerRef`, it'll add a new component to the existing list of elements. For our recipe, we only needed to show one component at a time, that is, either `FBCardComponent` or `TwitterCardComponent`. So that only a single element exists in `ViewContainerRef`, we used the `clear()` method on it before adding an element.
+
 # NgDynamicComponents
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.0.6.
