@@ -1,16 +1,15 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { merge, Observable } from 'rxjs';
 import { interval } from 'rxjs/internal/observable/interval';
-import { Subscription } from 'rxjs/internal/Subscription';
-import { takeWhile } from 'rxjs/operators';
+import { map } from 'rxjs/operators';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss']
 })
-export class HomeComponent implements OnInit, OnDestroy {
-  isComponentAlive: boolean;
-  subscription: Subscription = null;
+export class HomeComponent implements OnInit {
+  streamsOutput$: Observable<number[]>
   inputStreamData = ['john wick', 'inception', 'interstellar'];
   outputStreamData = [];
 
@@ -20,39 +19,20 @@ export class HomeComponent implements OnInit, OnDestroy {
     this.startStream();
   }
 
-  ngOnDestroy() {
-    this.stopStream();
-  }
-
   startStream() {
-    this.isComponentAlive = true;
     const streamSource = interval(1500);
     const secondStreamSource = interval(3000);
     const fastestStreamSource = interval(500);
-    streamSource
-      .pipe(
-        takeWhile(() => !!this.isComponentAlive)
-      ).subscribe(input => {
-      this.outputStreamData.push(input);
-      console.log('stream output', input)
-    });
-    secondStreamSource
-      .pipe(
-        takeWhile(() => !!this.isComponentAlive)
-      ).subscribe(input => {
-        this.outputStreamData.push(input);
-        console.log('second stream output', input)
-      });
-    fastestStreamSource
-      .pipe(
-        takeWhile(() => !!this.isComponentAlive)
-      ).subscribe(input => {
-        this.outputStreamData.push(input);
-        console.log('fastest stream output', input)
-      });
-  }
-
-  stopStream() {
-    this.isComponentAlive = false;
+    this.streamsOutput$ = merge(
+      streamSource,
+      secondStreamSource,
+      fastestStreamSource
+      ).pipe(
+        map(output => {
+          console.log(output)
+          this.outputStreamData = [...this.outputStreamData, output]
+          return this.outputStreamData;
+        })
+      )
   }
 }
