@@ -1,3 +1,9 @@
+# How it works
+
+When we inject a token into a component, Angular tries to find the resolved value of the token from the injected place by moving up the hierarchy of components and modules.
+We provided `EmployeeConfig` as `APP_CONFIG` in `EmployeeModule`. When Angular tries to resolve its value for `BucketComponent`, it finds it early at `EmployeeModule` as `EmployeeConfig`.
+Therefore, Angular stops right there and doesn't reach `AppComponent`. Notice that the value for `APP_CONFIG` in `AppComponent` is the `AppConfig` constant.
+
 # NgValueProviders
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.0.6.
