@@ -1,3 +1,10 @@
+# How it works...
+
+The beauty of reactive forms is that they provide much more flexibility than the regular `ngModel` binding or even template-driven forms. And for each form control, we can subscribe to its `valueChanges` Observable, which receives a new value whenever the input is changed.
+So, instead of relying on the Submit button's click, we subscribed directly to the `valueChanges` property of each form control.
+In a regular scenario, that would result in four different streams for four inputs, which means we would have four subscriptions that we need to take care of and make sure we unsubscribe them. This is where the `combineLatest` operator comes into play.
+We used the `combineLatest` operator to combine those four streams into one, which means we needed to unsubscribe only one stream on component destruction. But hey! Remember that we don't need to do this if we use the `async` pipe? That's exactly what we did. We removed the subscription from the `home.component.ts` file and used the `.pipe()` method with the `.map()` operator. The `.map()` operator transformed the data to our needs, and then returned the transformed data to be set to the `boxStyles$` Observable. Finally, we used the `async` pipe in our template to subscribe to the `boxStyles$` Observable and assigned its value as the [ngStyle] to our box element.
+
 # UsingCombinelatestOperator
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.0.6.
