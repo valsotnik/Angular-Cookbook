@@ -1,3 +1,8 @@
+# How it works
+
+The `@Optional` decorator is a special parameter from the `@angular/core` package, which allows you to mark a parameter for a dependency as optional.
+Behind the scenes, Angular will provide the value as null when the dependency doesn't exist or is not provided to the app.
+
 # NgOptionalDependencies
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.0.6.
