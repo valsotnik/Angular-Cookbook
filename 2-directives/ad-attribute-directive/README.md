@@ -1,3 +1,9 @@
+# How it works...
+
+We create an attribute directive that takes the `highlightText` and `highlightColor` inputs and then listens to the input changes for the `highlightText` input using the `SimpleChanges` application programming interface (API) and the `ngOnChanges` life cycle hook.
+First, we make sure to save the original content of the target element by getting the attached element using the `ElementRef` service, using the `.nativeElement`. `innerHTML` on the element, and then saving it to `originalHTML` property of the directive. Then, whenever the input changes, we replace the text with an additional HTML element (a `<span>` element) and add the background color to this `span` element.
+We then replace the `innerHTML` property of the target element with this modified version of the content.
+
 # AdAttributeDirective
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.0.6.
