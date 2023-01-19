@@ -1,3 +1,9 @@
+# How it works...
+
+For complex animations in Angular, the `keyframes` method is a really good way of defining different offsets of the animation throughout its journey.
+We can define the `offsets` using the styles method, which takes `AnimationStyleMetadata` as a parameter. `AnimationStyleMetadata` also allows us to pass the `offset` property, which can have a value between 0 and 1.
+Thus, we can define different styles for different offsets to create advanced animations.
+
 # AnimationsUsingKeyframes
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.0.6.
