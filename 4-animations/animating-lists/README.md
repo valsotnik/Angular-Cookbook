@@ -1,3 +1,10 @@
+# How it works...
+
+`Stagger` animations only work inside `query` methods. This is because of the fact that staggering animations usually are applied to the list itself and not to individual items.
+In order to search or `query` the items, we first use the `query` method. Then we use the `stagger` method to define how many milliseconds of staggering we want before the animation starts for the next list item.
+We also provide animation as well in the `stagger` method to define the animation for each element found with the query.
+Notice that we're using `{ optional: true }` for both the `:enter` query and the `:leave` query. This is because if the list binding changes (`bucket.length`), we don't get an error if no new element has entered the DOM or no element has left the DOM.
+
 # AnimatingLists
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.0.6.
