@@ -1,3 +1,8 @@
+# How it works...
+
+Since we wanted to implement a 3D animation in this recipe, we first made sure that the animation host element had a value for the perspective style, so we can see all the magic in 3D.
+Then we defined our animations using the `keyframes` method with an animation state for each offset so we could set different angles and rotations at those states, just so it all looks cool. One important thing that we did was group our `:enter` and `:leave` queries using the group method, where we defined the animations. This made sure that we had the route entering and leaving the view simultaneously.
+
 # ComplexRouteAnimations
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.0.6.
