@@ -1,3 +1,10 @@
+# How it works...
+
+Angular provides its own Animation API that allows you to animate any property that the CSS transitions work on.
+The benefit is that you can configure them dynamically based on the requirements. We first used the `trigger` method to register the animation with the `states` and `transitions`. We then defined those `states` and t`ransitions` using the `state` and `transition` methods respectively.
+And we also saw how to run animations in parallel using the `group` method. If we didn't `group` the animations, they'd run sequentially.
+Finally, we applied the `states` using some flags in the component to reflect the changes.
+
 # NgBasicAnimation
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.0.6.

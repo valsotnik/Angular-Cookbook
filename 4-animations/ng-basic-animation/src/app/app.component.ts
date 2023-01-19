@@ -1,10 +1,23 @@
 import { Component } from '@angular/core';
 import { SocialCardType } from './constants/social-card-type';
+import {
+  trigger,
+  state,
+  style,
+  animate,
+  transition,
+  group
+  } from '@angular/animations';
+import { buttonTextAnimation } from './animations';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  styleUrls: ['./app.component.scss'],
+  animations: [
+    buttonTextAnimation('fbButtonTextAnimation', '80px'),
+    buttonTextAnimation('twButtonTextAnimation', '60px'),
+  ]
 })
 export class AppComponent {
   title = 'ng-dynamic-components';
@@ -15,3 +28,6 @@ export class AppComponent {
     this.selectedCardType = type;
   }
 }
+
+
+
