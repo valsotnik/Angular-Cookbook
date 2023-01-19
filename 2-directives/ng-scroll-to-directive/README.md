@@ -1,3 +1,10 @@
+# How it works...
+
+The essence of this recipe is the web API that we're using within an Angular directive, and that is `Element.scrollIntoView()`.
+We first attach our `appScrollTo` directive to the elements that should trigger scrolling upon clicking them.
+We also specify which element to scroll to by using the target input for each directive attached.
+Then, we implement the click handler inside the directive with the `scrollIntoView()` method to scroll to a particular target, and to use a smooth animation while scrolling, we pass the `{behavior: 'smooth'}` object as an argument to the `scrollIntoView()` method.
+
 # NgScrollToDirective
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.0.6.
