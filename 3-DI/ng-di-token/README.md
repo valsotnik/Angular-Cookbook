@@ -1,3 +1,10 @@
+# How it works
+
+Angular doesn't recognize regular TypeScript classes as injectables in services.
+However, we can create our own injection tokens and use the `@Inject` decorator to inject them whenever possible.
+Angular recognizes our token behind the scenes and finds its corresponding definition, which is usually in the form of a factory function.
+Notice that we're using `providedIn: 'root'` within the token definition. This means that there will be only one instance of the class in the entire application.
+
 # NgDiToken
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.0.6.
