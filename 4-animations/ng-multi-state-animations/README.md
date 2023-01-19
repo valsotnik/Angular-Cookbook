@@ -1,3 +1,14 @@
+# How it works...
+
+Angular uses triggers for understanding what state the animation is in. An example syntax looks as follows:
+`<div [@animationTriggerName]="expression">...</div>;`
+expression can be a valid JavaScript expression, and it evaluates to the name of the state.
+In our case, we bind it to the `cardState` property, which either contains `'active'` or `'hovered'`.
+Therefore, we end up with three transitions for our cards:
+• `void => active` (when the element is added to the DOM and is rendered)
+• `active => hovered` (when the mouseenter event triggers on the card)
+• `hovered => active` (when the mouseleave event triggers on the card)
+
 # NgBasicAnimation
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.0.6.
