@@ -1,3 +1,9 @@
+# How it works...
+
+When we create an Observable/stream and we subscribe to it, RxJS automagically adds our provided `.subscribe` method block as a handler to the `Observable`. So, whenever there's a value emitted from the `Observable`, our method is supposed to be called.
+The fun part is that Angular doesn't automatically destroy that subscription/handler when the component unmounts or when you have navigated away from the route. That's because the core of Observables is RxJS, not Angular, and therefore it isn't Angular's responsibility to handle it.
+Angular provides certain lifecycle methods, and we used the `OnDestroy (ngOnDestroy`) method. This is because when we navigate away from a route, Angular destroys that route, and that's when we would want to unsubscribe from all streams we have subscribed to.
+
 # RxjsUnsubscribingStreams
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.0.6.
