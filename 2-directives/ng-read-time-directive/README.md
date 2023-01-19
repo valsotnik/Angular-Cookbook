@@ -1,3 +1,7 @@
+# How it works...
+
+The `appReadTime` directive is at the heart of this recipe. We use the `ElementRef` service inside the directive to get the native element that the directive is attached to, then we take out its text content. The only thing that remains then is to perform the calculation. We first split the entire text content into words by using the `/\s+/g` regular expression (`regex`), and thus we count the total words in the text content. Then, we divide the word count by the `wordsPerMinute` value we have in the configuration to calculate how many minutes it would take to read the entire text.
+
 # NgReadTimeDirective
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.0.6.
