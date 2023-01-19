@@ -1,3 +1,11 @@
+# How it works...
+
+Structural directives in Angular are special for multiple reasons.
+First, they allow you to manipulate DOM elements — that is, adding/removing/manipulating based on your needs.
+Moreover, they have this `*` prefix that binds to all the magic Angular does behind the scenes.
+As an example, `*ngIf` and `*ngFor` are both structural directives that behind the scenes work with the `<ng-template>` directive containing the content you bind the directive to and create the required variables/properties for you in the scope of `ng-template`.
+In the recipe, we do the same. We use the `TemplateRef` service to access the `<ng-template>` directive that Angular creates for us behind the scenes, containing the host element on which our `appIfNot` directive is applied. Then, based on the value provided to the directive as input, we decide whether to add the magical `ng-template` to the view or clear the `ViewContainerRef` service to remove anything inside it.
+
 # NgIfNotDirective
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.0.6.
