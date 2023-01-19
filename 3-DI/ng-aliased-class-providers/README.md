@@ -1,3 +1,9 @@
+# How it works
+
+When we inject a service into a component, Angular tries to find that component from the injected place by moving up the hierarchy of components and modules.
+Our `BucketService` is provided in `'root'` using the `providedIn: 'root'` syntax.
+Therefore, it resides at the top of the hierarchy. However, since, in this recipe, we use an aliased class provider in `EmployeeModule`, when Angular searches for `BucketService`, it quickly finds it inside EmployeeModule and stops there before it even reaches `'root'` to get the actual `BucketService`.
+
 # NgAliasedClassProviders
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.0.6.
