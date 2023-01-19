@@ -1,3 +1,9 @@
+# How it works...
+
+When an animation is registered with Angular using the `trigger` method, Angular itself creates a local property within the scope with the name of the trigger
+set as `@triggerName`. It also creates the `.start` and `.done` sub-properties as `EventEmitter` instances for the animation.
+Therefore, we can easily use them in the templates to capture the `AnimationEvent` instance passed by Angular. Each `AnimationEvent` contains the `phaseName` property, using which we can also identify whether it is the start event or the done event. We can also tell from `AnimationEvent` which state the animation started from and which state it ended on.
+
 # AnimationCallbacks
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.0.6.
