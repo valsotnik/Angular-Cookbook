@@ -1,3 +1,7 @@
+# How it works...
+
+It all begins when we change our route's path to `user/:userId`. This makes `userId` a required parameter for our route. The other piece of the puzzle is to retrieve this parameter in `UserDetailComponent` and then use it to get the target user, as well as similar users. For that, we use the `ActivatedRoute` service. The `ActivatedRoute` service holds a lot of necessary information about the current route and, therefore, we were able to fetch the current route's `uuid` parameter by subscribing to the `paramMap` Observable, so even if the parameter changes while staying on a user's page, we still execute the necessary operations. Notice that we also create a property named `componentIsAlive`. As you might have seen in our prior recipes, we use it in conjunction with the `takeWhile` operator to automatically unsubscribe from the Observable streams as soon as the user navigates away from the page, or essentially when the component is destroyed.
+
 # WorkingWithRouteParams
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.0.2.
