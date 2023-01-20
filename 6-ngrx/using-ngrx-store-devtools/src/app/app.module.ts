@@ -1,3 +1,4 @@
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
@@ -16,7 +17,8 @@ import * as appStore from './store/app.reducer';
     AppRoutingModule,
     FormsModule,
     BrowserAnimationsModule,
-    StoreModule.forRoot({app: appStore.reducer})
+    StoreModule.forRoot({app: appStore.reducer}),
+    StoreDevtoolsModule.instrument({ maxAge: 25 }),
   ],
   providers: [],
   bootstrap: [AppComponent]

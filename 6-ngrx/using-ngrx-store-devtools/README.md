@@ -1,3 +1,7 @@
+# How it works...
+
+It is important to understand that `NgRx` is a combination of `Angular` and `Redux` (using RxJS). By using the `Store Devtools` package and the `Redux DevTools` extension, we're able to debug the app really easily, which helps us find potential bugs, predict state changes, and be more transparent about what's happening behind the scenes in the `@ngrx/store` package.
+
 # UsingNgrxStoreDevtools
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.0.6.
