@@ -1,3 +1,7 @@
+# How it works...
+
+The `CanActivate` interface of the route guards is the heart of our recipe because it corresponds to the fact that each route in Angular can have an array of guards for the `CanActivate` property of the route definition. When a guard is applied, it is supposed to return a `Boolean` value or a `UrlTree`. We've focused on the `Boolean` value's usage in our recipe. We can return the `Boolean` value directly using a `promise` or even using an `Observable`. This makes guards really flexible for use even with remote data. Anyway, for our recipe, we've kept it easy to understand by checking whether the user is logged in (for `AuthGuard`) and by checking whether the expected type of user is logged in for the particular routes (`AdminGuard` and `EmployeeGuard`).
+
 # UsingRouteGuards
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.0.2.
