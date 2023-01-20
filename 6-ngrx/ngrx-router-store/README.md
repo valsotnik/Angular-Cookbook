@@ -1,3 +1,10 @@
+# How it works...
+
+`@ngrx/router-store` is an amazing package that does a lot of magic to make our development a lot easier with NgRx.
+You saw how we could remove the `ActivatedRoute` service completely from the `UserDetailComponent` class by using the selectors from the package.
+Essentially, this helped us get the route params right in the selectors, and we could use it in our selectors to get and filter out the appropriate data. Behind the scenes, the package listens to the route changes in the entire Angular app and fetches from the route itself.
+It then stores the respective information in the NgRx Store so that it remains in the Redux state and can be selected via the package - provided selectors easily. In my opinion, it's freaking awesome! I say this because the package is doing all the heavy lifting that we would have to do otherwise. As a result, our `UserDetailComponent` class now relies only on the Store service, which makes it even easier to test because of fewer dependencies.
+
 # NgrxRouterStore
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.0.6.
