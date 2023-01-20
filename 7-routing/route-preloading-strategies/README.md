@@ -1,3 +1,10 @@
+# How it works...
+
+Angular provides a great way to implement our own custom preloading strategy for our feature modules. We can decide easily which modules should be preloaded
+and which should not. In the recipe, we learned a very simple way to configure the preloading using the data object of the routes configuration by adding a property
+named `shouldPreload`. We created our own custom preload strategy service named `CustomPreloadStrategyService`, which implements the `PreloadingStrategy` interface from the `@angular/router` package. The idea is to use the preload method from the `PreloadingStrategy` interface, which allows us to decide whether a route should be preloaded. That's because Angular goes through each route using our custom preload strategy and decides which routes to preload. And that's it. We can now assign
+the `shouldPreload` property in the data object to any route we want to preload on app start.
+
 # RoutePreloadingStrategies
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.0.2.
