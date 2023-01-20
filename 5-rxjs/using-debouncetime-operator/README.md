@@ -1,3 +1,7 @@
+# How it works...
+
+The `debounceTime` operator waits for a particular time before emitting a value from the source Observable, and that too only when there's no more source emission at hand. This allows us to use the operator on the input's `valueChanges` Observable. When you type something in the input, the `debounceTime` operator waits for 300ms to see if you're still typing. And if you've not typed for those 300ms, it moves forward with the emission, causing the HTTP call at the end.
+
 # UsingDebouncetimeOperator
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.0.6.
