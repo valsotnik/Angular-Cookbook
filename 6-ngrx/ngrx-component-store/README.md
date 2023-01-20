@@ -1,3 +1,7 @@
+# How it works...
+
+As mentioned earlier, `@ngrx/component-store` is a standalone package that can easily be installed in your Angular apps without having to use `@ngrx/store`, `@ngrx/ effects`, and so on. It is supposed to replace the usage of `BehaviorSubject` in Angular services, and that's what we did in this recipe. We covered how to initialize a `ComponentStore` and how to set the initial state using the `setState` method when we already had the values without accessing the state, and we learned how to create `updater` methods that can be used to update the state, as they can access the state and allow us to even pass arguments for our own use cases.
+
 # NgrxComponentStore
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.0.6.
