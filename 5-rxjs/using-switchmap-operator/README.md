@@ -1,3 +1,8 @@
+# How it works...
+
+The `switchMap` operator cancels the previous (inner) subscription and subscribes to a `new Observable` instead.
+That's why it cancels all the HTTP calls sent before in our example and just subscribes to the last one. This was the intended behavior for our app.
+
 # UsingSwitchmapOperator
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.0.6.
