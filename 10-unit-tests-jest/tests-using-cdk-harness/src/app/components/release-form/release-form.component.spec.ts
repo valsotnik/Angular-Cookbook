@@ -1,12 +1,15 @@
+import { HarnessLoader } from '@angular/cdk/testing';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { ReactiveFormsModule } from '@angular/forms';
 import { ReleaseLog } from 'src/app/classes/release-log';
 
 import { ReleaseFormComponent } from './release-form.component';
+import { TestbedHarnessEnvironment } from '@angular/cdk/testing/testbed';
 
 describe('ReleaseFormComponent', () => {
   let component: ReleaseFormComponent;
   let fixture: ComponentFixture<ReleaseFormComponent>;
+  let harnessLoader: HarnessLoader;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
@@ -19,6 +22,7 @@ describe('ReleaseFormComponent', () => {
     fixture = TestBed.createComponent(ReleaseFormComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
+    harnessLoader = TestbedHarnessEnvironment.loader(fixture);
   });
 
   it('should submit a new release log with the correct input values', () => {
