@@ -1,3 +1,4 @@
+import { ScrollingModule } from '@angular/cdk/scrolling';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
@@ -19,6 +20,7 @@ import { LoaderComponent } from './components/loader/loader.component';
     AppRoutingModule,
     ReactiveFormsModule,
     HttpClientModule,
+    ScrollingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
