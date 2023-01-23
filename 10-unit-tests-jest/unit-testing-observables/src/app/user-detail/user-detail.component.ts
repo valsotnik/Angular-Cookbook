@@ -24,6 +24,7 @@ export class UserDetailComponent implements OnInit, OnDestroy {
       takeWhile(() => !!this.isComponentAlive),
       flatMap(params => {
         this.user = null;
+        console.log('params', params);
         this.similarUsers = null;
         const userId = params.get('uuid');
         return this.userService.getUser(userId)
