@@ -1,3 +1,7 @@
+# How it works...
+
+This recipe contained a lot of knowledge from the previous recipes of this chapter. However, the key highlight is the `TestBed.inject()` method. Essentially, this magical method gets the instance of the provided service – `CounterService` – to us. This is the instance of the service that is bound with the instance of `CounterComponent`. Since we have access to the same instance of the service that is being used by the component's instance, we can spy on it directly and expect it to be called – or even mock the returned values.
+
 # SettingUpJest
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.1.3.
