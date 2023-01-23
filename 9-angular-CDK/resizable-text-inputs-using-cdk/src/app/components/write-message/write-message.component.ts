@@ -1,4 +1,5 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { CdkTextareaAutosize } from '@angular/cdk/text-field';
+import { Component, OnInit, Output, EventEmitter, ViewChild } from '@angular/core';
 import { ChatService } from 'src/app/core/services/chat.service';
 import { Message } from '../../models/message';
 @Component({
@@ -8,6 +9,7 @@ import { Message } from '../../models/message';
 })
 export class WriteMessageComponent implements OnInit {
   @Output() public onMessageSent = new EventEmitter<any>();
+  @ViewChild(CdkTextareaAutosize) newMessageInput: CdkTextareaAutosize;
   public chatInput = '';
   constructor(private chatService: ChatService) {}
 
@@ -25,6 +27,7 @@ export class WriteMessageComponent implements OnInit {
       ])[0];
       this.onMessageSent.emit(message);
       this.chatInput = '';
+      this.newMessageInput.reset();
     }
   }
 }
