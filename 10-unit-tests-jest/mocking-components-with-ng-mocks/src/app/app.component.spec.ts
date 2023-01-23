@@ -1,6 +1,8 @@
 import { TestBed, waitForAsync } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
+import { MockComponent } from 'ng-mocks';
 import { AppComponent } from './app.component';
+import { VersionControlComponent } from './components/version-control/version-control.component';
 
 const pageTitle = 'Mocking components using ng-mocks';
 
@@ -9,7 +11,7 @@ describe('AppComponent', () => {
     waitForAsync(() => {
       TestBed.configureTestingModule({
         imports: [RouterTestingModule],
-        declarations: [AppComponent],
+        declarations: [AppComponent, MockComponent(VersionControlComponent)],
       }).compileComponents();
     })
   );
