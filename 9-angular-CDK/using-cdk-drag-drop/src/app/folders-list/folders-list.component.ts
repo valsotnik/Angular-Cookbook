@@ -1,7 +1,9 @@
+import { CdkDragDrop, moveItemInArray, transferArrayItem } from '@angular/cdk/drag-drop';
 import { Component, OnInit } from '@angular/core';
 import { APP_DATA } from '../constants/data';
 import { FileIconService } from '../core/services/file-icon.service';
 import { IFolder } from '../interfaces';
+import { faArrowAltCircleUp } from '@fortawesome/free-regular-svg-icons';
 
 @Component({
   selector: 'app-folders-list',
@@ -11,6 +13,7 @@ import { IFolder } from '../interfaces';
 export class FoldersListComponent implements OnInit {
   folders = APP_DATA;
   selectedFolder: IFolder = null;
+  upArrow = faArrowAltCircleUp;
   constructor(private fileIconService: FileIconService) {
     this.folders = this.folders.map((folder) => {
       return {
@@ -33,5 +36,13 @@ export class FoldersListComponent implements OnInit {
       return;
     }
     this.selectedFolder = folder;
+  }
+
+  onFileDrop(event: CdkDragDrop<string[]>) {
+    if (event.previousContainer === event.container) {
+      moveItemInArray( event.container.data, event.previousIndex, event.currentIndex);
+    } else {
+      transferArrayItem( event.previousContainer.data, event.container.data,event.previousIndex, event.currentIndex);
+    }
   }
 }
