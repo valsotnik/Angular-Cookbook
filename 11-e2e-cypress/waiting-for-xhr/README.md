@@ -1,3 +1,10 @@
+# How it works...
+
+In the recipe, we use something called variable aliasing. We first use the `cy.intercept()` method so that Cypress can listen to the network call. Note that
+we use a wildcard for the URL by using `https://api.randomuser.me/*` as the parameter, and then we use a `.as('searchUsers')` statement to give an alias for this interception.
+
+Then, we use the `cy.wait('@searchUsers');` statement, using the `searchUsers` alias to inform Cypress that it has to wait until the aliased interception happens—that is, until the network call is made, regardless of how long it takes. This makes our tests pass, even though the regular 4,000 ms Cypress timeout has already passed before actually getting the network call. Magic, isn't it?
+
 # SettingUpJest
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.1.3.
