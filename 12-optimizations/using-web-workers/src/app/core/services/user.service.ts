@@ -4,15 +4,28 @@ import { map } from 'rxjs/operators';
 import { IUser } from '../interfaces/user.interface';
 import { Observable, of } from 'rxjs';
 import createUniqueId from '../constants/create-unique-id';
+import getUniqueIdWorker from '../constants/get-unique-id-worker';
 
 @Injectable({
   providedIn: 'root',
 })
 export class UserService {
+  worker: Worker = getUniqueIdWorker();
   usersApiUrl = 'https://api.randomuser.me?results=10&seed=packt';
   commentsJsonUrl = 'assets/data/comments.json';
   usersCache: IUser[] = [];
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) {
+    this.worker.onmessage = ({ data: { uniqueId, email }
+    }) => {
+      console.log('received message from worker', uniqueId, email);
+      const user = this.usersCache.find((user) => user.email === email);
+      localStorage.setItem(`ng_user__${user.email}`, JSON.stringify({
+        ...user,
+        uniqueId,
+      })
+      );
+    };
+  }
 
   getUser(userId: string): Observable<IUser> {
     return this.getUsers().pipe(
@@ -38,16 +51,22 @@ export class UserService {
 
   saveUserUniqueIdsToStorage(user: IUser, index) {
     let uniqueId;
-    for (let i = 0, len = (index + 1) * 100000; i < len; ++i) {
-      uniqueId = createUniqueId(50);
+    const worker: Worker = getUniqueIdWorker();
+    if (worker !== null) {
+      worker.postMessage({ index, email: user.email });
+    } else {
+      // fallback
+      for (let i = 0, len = (index + 1) * 100000; i < len; ++i) {
+        uniqueId = createUniqueId(50);
+      }
+      localStorage.setItem(
+        `ng_user__${user.email}`,
+        JSON.stringify({
+          ...user,
+          uniqueId,
+        })
+      )
     }
-    localStorage.setItem(
-      `ng_user__${user.email}`,
-      JSON.stringify({
-        ...user,
-        uniqueId,
-      })
-    );
   }
 
   getSimilarUsers(userId: string): Observable<IUser[]> {
