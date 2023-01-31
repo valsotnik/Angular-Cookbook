@@ -1,95 +1,43 @@
+## Description
+Actionable solutions to common problems in Angular enterprise development
 
-### Get this product for $5
+## Chapters
 
-<i>Packt is having its biggest sale of the year. Get this eBook or any other book, video, or course that you like just for $5 each</i>
+[Components](https://github.com/valsotnik/Angular-Cookbook/tree/master/1-components): 
+Winning Components Communication, explains different techniques to use to implement communication between components in Angular. @Input() and @ Output() decorators, services, and lifecycle hooks are covered as well. There is also a recipe for how to create a dynamic Angular component.
 
+[Directives](https://github.com/valsotnik/Angular-Cookbook/tree/master/2-directives):
+Understanding and Using Angular Directives, gives an introduction to Angular directives and some recipes that use Angular directives, including attribute directives and structural directives.
 
-<b><p align='center'>[Buy now](https://packt.link/9781838989439)</p></b>
+[Dependency Injection](https://github.com/valsotnik/Angular-Cookbook/tree/master/3-DI):
+The Magic of Dependency Injection in Angular, includes recipes that cover optional dependencies, configuring an injection token, using the providedIn: 'root' metadata for Angular services, value providers, and aliased class providers.
 
+[Animations](https://github.com/valsotnik/Angular-Cookbook/tree/master/4-animations):
+ Understanding Angular Animations, contains recipes for implementing multi- state animations, staggering animations, keyframe animations, and animations for switching between routes in your Angular apps.
 
-<b><p align='center'>[Buy similar titles for just $5](https://subscription.packtpub.com/search)</p></b>
+[RxJS](https://github.com/valsotnik/Angular-Cookbook/tree/master/5-rxjs):
+ Angular and RxJS – Awesomeness Combined, covers recipes on RxJS instance and static methods. It also has some recipes on the usage of the combineLatest, flatMap, and switchMap operators and covers some tips and tricks about using RxJS streams.
 
+[NGRX](https://github.com/valsotnik/Angular-Cookbook/tree/master/6-ngrx):
+ Reactive State Management with NgRx, has recipes concerning the famous NgRX library and its core concepts. It covers core concepts such as NgRx actions, reducers, selectors, and effects and looks at using packages such as @ngrx/store- devtools and @component/store.
 
-# Angular Cookbook
+[Routing](https://github.com/valsotnik/Angular-Cookbook/tree/master/7-routing):
+ Understanding Angular Navigation and Routing, explores recipes on lazily loaded routes, route guards, preloading route strategies, and some interesting techniques to be used with the Angular router.
 
-<a href="https://www.packtpub.com/product/angular-cookbook/9781838989439?utm_source=github&utm_medium=repository&utm_campaign=9781838989439"><img src="https://static.packt-cdn.com/products/9781838989439/cover/smaller" alt="Angular Cookbook" height="256px" align="right"></a>
+[Forms](https://github.com/valsotnik/Angular-Cookbook/tree/master/8-forms):
+ Mastering Angular Forms, covers recipes for template-driven forms, reactive forms, form validation, testing forms, and creating your own form control.
 
-This is the code repository for [Angular Cookbook](https://www.packtpub.com/product/angular-cookbook/9781838989439?utm_source=github&utm_medium=repository&utm_campaign=9781838989439), published by Packt.
+[Angular CDK](https://github.com/valsotnik/Angular-Cookbook/tree/master/9-angular-CDK):
+ Angular and the Angular CDK, has a lot of cool Angular CDK recipes, including ones on virtual scroll, keyboard navigation, the overlay API, the clipboard API, CDK drag and drop, the CDK stepper API, and the CDK textfield API.
 
-**Over 80 actionable recipes every Angular developer should know**
-
-## What is this book about?
-
-The Angular framework, powered by Google, is the framework of choice for many web development projects built across varying scales. It’s known to provide much-needed stability and a rich tooling ecosystem for building production-ready web and mobile apps. This recipe-based guide enables you to learn Angular concepts in depth using a step-by-step approach. You’ll explore a wide range of recipes across key tasks in web development that will help you build high-performance apps.
-
-This book covers the following exciting features: 
-* Gain a better understanding of how components, services, and directives work in Angular
-* Understand how to create Progressive Web Apps using Angular from scratch
-* Build rich animations and add them to your Angular apps
-* Manage your app's data reactivity using RxJS
-* Implement state management for your Angular apps with NgRx
-
-If you feel this book is for you, get your [copy](https://www.amazon.com/dp/1838989439) today!
-
-<a href="https://www.packtpub.com/?utm_source=github&utm_medium=banner&utm_campaign=GitHubBanner"><img src="https://raw.githubusercontent.com/PacktPublishing/GitHub/master/GitHub.png" 
-alt="https://www.packtpub.com/" border="5" /></a>
-
-
-## Instructions and Navigations
-All of the code is organized into folders. For example, Chapter02.
-
-The code will look like the following:
-```
-import { Directive, Input } from ‘@angular/core’;
-@Directive({
-selector: ‘[appHighlight]’
-})
-export class HighlightDirective {
-@Input() highlightText = ‘’;
-@Input() highlightColor = ‘yellow’;
-constructor() { }
-}
-```
-
-**Following is what you need for this book:**
-
-The book is for intermediate-level Angular web developers looking for actionable solutions to common problems in Angular enterprise development. Mobile developers using Angular technologies will also find this book useful. Working experience with JavaScript and TypeScript is necessary to understand the topics covered in this book more effectively.
-
-With the following software and hardware list you can run all code files present in the book (Chapter 1-13).
-
-### Software and Hardware List
-
-| Chapter  | Software required                   | OS required                        |
-| -------- | ------------------------------------| -----------------------------------|
-| 1-13     | Visual Studio Code (IDE)            | Windows, Mac OS X, and Linux (Any) |
-| 1-13     | Angular                             | Windows, Mac OS X, and Linux (Any) |
-| 1-13     | TypeScript 3.7                      | Windows, Mac OS X, and Linux (Any) |
-| 1-13     | ECMAScript 11                       | Windows, Mac OS X, and Linux (Any) |
-
-
-
-We also provide a PDF file that has color images of the screenshots/diagrams used in this book. [Click here to download it](https://static.packt-cdn.com/downloads/9781838989439_ColorImages.pdf).
-
-
-### Related products <Other books you may enjoy>
-* Angular Projects - Second Edition [[Packt]](https://www.packtpub.com/product/angular-projects-second-edition/9781800205260?utm_source=github&utm_medium=repository&utm_campaign=9781800205260) [[Amazon]](https://www.amazon.com/dp/1800205260)
-
-* Angular for Enterprise-Ready Web Applications - Second Edition [[Packt]](https://www.packtpub.com/product/angular-for-enterprise-ready-web-applications-second-edition/9781838648800?utm_source=github&utm_medium=repository&utm_campaign=9781838648800) [[Amazon]](https://www.amazon.com/dp/1838648801)
-
-## Errata 
- * Page 19 (Code Snippet 1, line 6):  **this.logs.push('initial version is ${name.trim()}')** _should be_ **this.logs.push( ~ initial version is ${name.trim()} ~)**
- * Page 19 (Code Snippet 2, line 6):  **this.logs.push('initial version is ${name.trim()}'))** _should be_ **this.logs.push(~ initial version is ${name.trim()} ~)**
- * Page 19 (Code Snippet 2, line 8):  **this.logs.push('version changed to ${name.trim()}')** _should be_ **this.logs.push(~ version changed to ${name.trim()} ~)**
+[Unit tests with Jest](https://github.com/valsotnik/Angular-Cookbook/tree/master/10-unit-tests-jest): 
+Writing Unit Tests in Angular with Jest, covers recipes for unit testing with Jest, exploring global mocks in Jest, mocking services/child components/pipes, using Angular CDK component harnesses, and unit testing Observables.
  
-## Get to Know the Author
-**Muhammad Ahsan Ayaz**
-is a Google Developer Expert in Angular and a software architect at Syncron. He has taught programming worldwide for the past 8 years through articles, video content, one-to-one mentoring, and tech talks at different global conferences. He has developed several libraries and plugins used by hundreds of thousands of developers, including ngx-device-detector, which has over 5 million installs and over 2,000 GitHub projects using it. He blogs at https://ahsanayaz.com and has a YouTube channel at https://ahsanayaz.com/youtube, where he regularly uploads video tutorials related to web and mobile app development. Apart from programming, Ahsan likes to travel and play multiplayer video games. He lives in Sweden with his wife.
+[e2e tests with Cypress](https://github.com/valsotnik/Angular-Cookbook/tree/master/11-e2e-cypress):
+ E2E Tests in Angular with Cypress, has recipes on E2E testing with Cypress in Angular apps. It covers validating forms, waiting for XHR calls, mocking HTTP call responses, using bundled packages with Cypress, and using fixtures in Cypress.
 
+[App Optimizations](https://github.com/valsotnik/Angular-Cookbook/tree/master/12-optimizations):
+ Performance Optimizations in Angular, contains some cool techniques to improve an Angular app's performance by using the OnPush change detection strategy, lazily loading feature routes, detaching the change detector from a component, using web workers with Angular, using pure pipes, adding performance budgets to an Angular app, and using the webpack-bundle analyzer.
 
-
-
-
-### Download a free PDF
-
- <i>If you have already purchased a print or Kindle version of this book, you can get a DRM-free PDF version at no cost.<br>Simply click on the link to claim your free PDF.</i>
-<p align="center"> <a href="https://packt.link/free-ebook/9781838989439">https://packt.link/free-ebook/9781838989439 </a> </p>
+[Building PWA](https://github.com/valsotnik/Angular-Cookbook/tree/master/13-pwa):
+ Building PWAs with Angular, contains recipes to create a PWA with Angular. It covers specifying a theme color for the PWA, using a device's dark mode, providinga custom PWA install prompt, precaching requests using Angular's service worker, and using App Shell.
