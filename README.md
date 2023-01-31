@@ -13,7 +13,12 @@ Actionable solutions to common problems in Angular enterprise development
  - [Creating **dynamic component**](https://github.com/valsotnik/Angular-Cookbook/tree/master/1-components/ng-dynamic-components) 
 
 [Directives](https://github.com/valsotnik/Angular-Cookbook/tree/master/2-directives):
-Understanding and Using Angular Directives, gives an introduction to Angular directives and some recipes that use Angular directives, including attribute directives and structural directives.
+ - [**Using attribute directives** to handle the appearance of elements](https://github.com/valsotnik/Angular-Cookbook/tree/master/2-directives/ad-attribute-directive)
+ - [Creating a directive to **calculate the read time for articles**](https://github.com/valsotnik/Angular-Cookbook/tree/master/2-directives/ng-read-time-directive)
+ - [Creating a basic directive that allows you to **vertically scroll to an element**](https://github.com/valsotnik/Angular-Cookbook/tree/master/2-directives/ng-scroll-to-directive)
+ - [Writing **custom structural directive**](https://github.com/valsotnik/Angular-Cookbook/tree/master/2-directives/ng-if-not-directive)
+ - [How to use **`*ngIf` and `*ngSwitch` together**](https://github.com/valsotnik/Angular-Cookbook/tree/master/2-directives/multi-structural-directives)
+ - [**Enhancing template type checking** for custom directives](https://github.com/valsotnik/Angular-Cookbook/tree/master/2-directives/enhanced-template-type-checking)
 
 [Dependency Injection](https://github.com/valsotnik/Angular-Cookbook/tree/master/3-DI):
 The Magic of Dependency Injection in Angular, includes recipes that cover optional dependencies, configuring an injection token, using the providedIn: 'root' metadata for Angular services, value providers, and aliased class providers.
