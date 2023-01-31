@@ -4,7 +4,13 @@ Actionable solutions to common problems in Angular enterprise development
 ## Chapters
 
 [Components](https://github.com/valsotnik/Angular-Cookbook/tree/master/1-components): 
-Winning Components Communication, explains different techniques to use to implement communication between components in Angular. @Input() and @ Output() decorators, services, and lifecycle hooks are covered as well. There is also a recipe for how to create a dynamic Angular component.
+ - [Communication using  **`@Input`** and **`@Output`**](https://github.com/valsotnik/Angular-Cookbook/tree/master/1-components/cc-inputs-outputs)
+ - [Communication **using services**](https://github.com/valsotnik/Angular-Cookbook/tree/master/1-components/cc-services)
+ - [Using **setters for intercepting** input property changes](https://github.com/valsotnik/Angular-Cookbook/tree/master/1-components/cc-setters)
+ - [Using **`ngOnChanges` to intercept** input property changes](https://github.com/valsotnik/Angular-Cookbook/tree/master/1-components/cc-ng-on-changes)
+ - [Accessing a child component in the parent template via **template variables**](https://github.com/valsotnik/Angular-Cookbook/tree/master/1-components/cc-template-vars)
+ - [Accessing a child component in a parent component class using **`@ViewChild`**](https://github.com/valsotnik/Angular-Cookbook/tree/master/1-components/cc-view-child)
+ - [Creating **dynamic component**](https://github.com/valsotnik/Angular-Cookbook/tree/master/1-components/ng-dynamic-components) 
 
 [Directives](https://github.com/valsotnik/Angular-Cookbook/tree/master/2-directives):
 Understanding and Using Angular Directives, gives an introduction to Angular directives and some recipes that use Angular directives, including attribute directives and structural directives.
